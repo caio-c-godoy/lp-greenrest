@@ -1,0 +1,2281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Wake Up Without Back Pain | Green Rest Mattress</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Custom-built organic mattresses for back pain relief, designed around your body and sleep position." />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --brand-teal: #00d4c9;
+      --brand-teal-dark: #00a79c;
+      --bg-dark: #020b10;
+      --bg-section: #050f1a;
+      --text-main: #f9fafb;
+      --text-muted: #9ca3af;
+      --accent-red: #ef4444;
+      --border-soft: #1f2937;
+      --radius-pill: 999px;
+      --radius-lg: 18px;
+      --shadow-soft: 0 18px 40px rgba(0, 0, 0, 0.65);
+      --font-main: "Montserrat", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      --max-width: 1080px;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background: radial-gradient(circle at top left, #02252a 0%, #020b10 40%, #010208 100%);
+      color: var(--text-main);
+      font-family: var(--font-main);
+      -webkit-font-smoothing: antialiased;
+    }
+    img { max-width: 100%; display: block; }
+
+    .container {
+      width: 100%;
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0 16px;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      backdrop-filter: blur(16px);
+      background: rgba(2, 11, 16, 0.96);
+      border-bottom: 1px solid rgba(31, 41, 55, 0.9);
+    }
+    .header-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 10px 0;
+    }
+    .logo-block {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .logo-block img {
+      height: 60px; /* AQUI VOCÊ AJUSTA O TAMANHO DO LOGO */
+    }
+    .logo-text {
+      display: flex;
+      flex-direction: column;
+      font-size: 11px;
+      color: var(--text-muted);
+    }
+    .logo-text strong {
+      color: var(--brand-teal);
+      letter-spacing: 0.08em;
+      font-size: 12px;
+      text-transform: uppercase;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 10px 20px;
+      border-radius: var(--radius-pill);
+      border: none;
+      cursor: pointer;
+      font-size: 14px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.18s ease-out;
+      white-space: nowrap;
+    }
+    .btn-primary {
+      background: radial-gradient(circle at top left, #2df8eb 0%, var(--brand-teal-dark) 40%, #009387 90%);
+      color: #001214;
+      box-shadow: var(--shadow-soft);
+    }
+    .btn-primary:hover { transform: translateY(-1px) scale(1.01); }
+    .btn-ghost {
+      background: transparent;
+      color: var(--text-main);
+      border: 1px solid rgba(156, 163, 175, 0.7);
+    }
+    .btn-ghost:hover {
+      border-color: var(--brand-teal);
+      color: var(--brand-teal);
+    }
+
+    /* allow multi-line CTA only inside factory block */
+    .factory-copy .btn {
+    white-space: normal;
+    line-height: 1.3;
+    text-align: center;
+    }
+
+
+    section { padding: 56px 0; }
+    h1, h2 { font-weight: 700; letter-spacing: -0.04em; }
+
+    /* HERO */
+    #hero { padding-top: 32px; }
+    .hero-inner {
+      display: grid;
+      grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+      gap: 28px;
+      align-items: center;
+    }
+    @media (max-width: 880px) {
+      .hero-inner { grid-template-columns: 1fr; }
+    }
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 4px 12px;
+      border-radius: var(--radius-pill);
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--brand-teal);
+      border: 1px solid rgba(45, 212, 191, 0.5);
+      background: rgba(0, 212, 201, 0.12);
+    }
+    .hero-title {
+      font-size: clamp(30px, 4vw, 38px);
+      margin: 14px 0 10px;
+    }
+    .hero-title span {
+      color: var(--brand-teal);
+    }
+    .hero-sub {
+      font-size: 15px;
+      color: var(--text-muted);
+      max-width: 440px;
+    }
+    .hero-ctas {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin: 18px 0 8px;
+    }
+    .hero-microcopy {
+      font-size: 11px;
+      color: var(--text-muted);
+    }
+  .hero-right {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+
+/* Moldura tipo celular para vídeo vertical */
+.phone-frame {
+  width: 100%;
+  max-width: 280px;       /* aumenta/diminui aqui se quiser maior/menor */
+  aspect-ratio: 9 / 16;
+  border-radius: 32px;
+  padding: 10px;
+  background: radial-gradient(circle at top, #1f2933 0%, #020617 60%, #000 100%);
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.85);
+  display: flex;
+  align-items: stretch;
+  justify-content: stretch;
+}
+
+.phone-inner {
+  border-radius: 24px;
+  overflow: hidden;
+  background: #000;
+  width: 100%;
+}
+
+/* Vídeo em formato retrato */
+.hero-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;  /* preenche sem distorcer */
+}
+
+/* Card pequeno embaixo do vídeo com prova social */
+.hero-card {
+  border-radius: 18px;
+  padding: 14px 14px 12px;
+  background: radial-gradient(circle at top, #021620 0%, #020b10 60%, #01030a 100%);
+  border: 1px solid rgba(45, 212, 191, 0.4);
+  box-shadow: var(--shadow-soft);
+  font-size: 13px;
+  width: 100%;
+  max-width: 320px;
+}
+
+.hero-card h3 {
+  font-size: 14px;
+  margin-bottom: 6px;
+}
+
+.hero-card p {
+  font-size: 13px;
+  color: var(--text-muted);
+}
+
+    .hero-list {
+      list-style: none;
+      font-size: 13px;
+      color: var(--text-muted);
+      display: grid;
+      gap: 6px;
+      margin: 8px 0 10px;
+    }
+    .hero-list li::before {
+      content: "• ";
+      color: var(--brand-teal);
+    }
+    .hero-stats {
+      display: flex;
+      justify-content: space-between;
+      gap: 10px;
+      border-top: 1px solid rgba(31, 41, 55, 0.85);
+      padding-top: 8px;
+      margin-top: 6px;
+      font-size: 11px;
+      color: var(--text-muted);
+    }
+    .hero-stats strong { color: var(--brand-teal); font-size: 14px; }
+
+#layers {
+  padding-top: 40px;
+}
+
+.layers-card {
+  margin-top: 18px;
+  border-radius: 22px;
+  padding: 18px 16px;
+  background: rgba(5, 15, 26, 0.96);
+  border: 1px solid var(--border-soft);
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+  gap: 18px;
+  align-items: center;
+}
+
+@media (max-width: 880px) {
+  .layers-card {
+    grid-template-columns: 1fr;
+  }
+}
+
+.layers-image-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.layers-image-wrap img {
+  max-width: 360px;
+  width: 100%;
+}
+
+.layers-list {
+  display: grid;
+  gap: 10px;
+}
+
+
+    /* SESSÕES CURTAS */
+    .section-title {
+      font-size: 24px;
+      margin-bottom: 6px;
+    }
+    .section-subtitle {
+      font-size: 14px;
+      color: var(--text-muted);
+      max-width: 520px;
+    }
+    .pill-list {
+      list-style: none;
+      display: grid;
+      gap: 8px;
+      margin-top: 16px;
+    }
+    .pill-list li {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 14px;
+      color: var(--text-muted);
+    }
+    .pill-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 999px;
+      background: var(--brand-teal);
+    }
+
+    .card-row {
+      margin-top: 18px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+      gap: 14px;
+    }
+    .mini-card {
+      border-radius: var(--radius-lg);
+      padding: 14px 12px;
+      background: rgba(5, 15, 26, 0.95);
+      border: 1px solid var(--border-soft);
+      font-size: 13px;
+    }
+    .mini-card h3 {
+      font-size: 14px;
+      margin-bottom: 4px;
+    }
+    .mini-card p {
+      color: var(--text-muted);
+      font-size: 13px;
+    }
+
+    /* PROVA SOCIAL – APENAS DEPOIMENTOS */
+#social {
+  padding-top: 32px;
+}
+
+.testimonial-grid {
+  margin-top: 18px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 14px;
+}
+
+.review-card {
+  border-radius: var(--radius-lg);
+  padding: 14px 12px;
+  background: radial-gradient(circle at top left, #02201d 0%, #050c16 60%, #05070f 100%);
+  border: 1px solid rgba(55, 65, 81, 0.9);
+  font-size: 13px;
+  color: var(--text-muted);
+}
+
+.review-name {
+  font-weight: 600;
+  font-size: 14px;
+  margin-bottom: 4px;
+  color: #e5e7eb;
+}
+
+.stars {
+  color: #fbbf24;
+  font-size: 12px;
+  margin-bottom: 4px;
+}
+
+/* FÁBRICA EM ORLANDO – VÍDEO + CTA */
+#factory {
+  padding-top: 32px;
+}
+
+.factory-row {
+  margin-top: 18px;
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+  gap: 20px;
+  align-items: center;
+}
+
+@media (max-width: 880px) {
+  .factory-row {
+    grid-template-columns: 1fr;
+  }
+}
+
+.factory-video-wrapper {
+  border-radius: 22px;
+  overflow: hidden;
+  background: #000;
+  box-shadow: var(--shadow-soft);
+  border: 1px solid var(--border-soft);
+}
+
+.factory-video-wrapper video,
+.factory-video-wrapper iframe {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.factory-copy {
+  font-size: 14px;
+  color: var(--text-muted);
+  display: grid;
+  gap: 10px;
+}
+
+.factory-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 4px 10px;
+  border-radius: var(--radius-pill);
+  border: 1px solid rgba(45, 212, 191, 0.5);
+  background: rgba(0, 212, 201, 0.08);
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+}
+
+/* GALERIA ESTILO WINDOWS+TAB */
+#gallery {
+  padding-top: 32px;
+}
+
+.gallery-stack {
+  margin-top: 20px;
+  position: relative;
+  height: 260px;
+}
+
+@media (max-width: 768px) {
+  .gallery-stack {
+    height: 220px;
+  }
+}
+
+.gallery-item {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 320px;
+  max-width: 82%;
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.85);
+  border: 1px solid rgba(15, 23, 42, 0.9);
+  transform-origin: center center;
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* posicionamento tipo janelas */
+.gallery-item:nth-child(1) {
+  transform: translateX(-70%) translateY(18px) rotate(-6deg);
+  opacity: 0.85;
+  z-index: 1;
+}
+.gallery-item:nth-child(2) {
+  transform: translateX(-50%) translateY(0) rotate(0deg);
+  opacity: 1;
+  z-index: 3;
+}
+.gallery-item:nth-child(3) {
+  transform: translateX(-30%) translateY(18px) rotate(6deg);
+  opacity: 0.85;
+  z-index: 2;
+}
+
+@media (max-width: 768px) {
+  .gallery-item:nth-child(1) {
+    transform: translateX(-78%) translateY(22px) rotate(-5deg);
+  }
+  .gallery-item:nth-child(3) {
+    transform: translateX(-22%) translateY(22px) rotate(5deg);
+  }
+}
+
+
+    /* QUIZ STEP-BY-STEP */
+    #quiz { scroll-margin-top: 90px; }
+    .quiz-shell {
+      max-width: 640px;
+      margin: 0 auto;
+      background: radial-gradient(circle at top, #021c20 0%, #020910 60%, #010208 100%);
+      border-radius: 24px;
+      border: 1px solid rgba(45, 212, 191, 0.5);
+      box-shadow: var(--shadow-soft);
+      padding: 22px 18px 18px;
+    }
+    @media (min-width: 768px) {
+      .quiz-shell { padding: 26px 22px 20px; }
+    }
+    .quiz-header {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 14px;
+      font-size: 13px;
+    }
+    .quiz-header h2 {
+      font-size: 18px;
+      margin-bottom: 4px;
+    }
+    .quiz-header p {
+      font-size: 12px;
+      color: var(--text-muted);
+    }
+    .quiz-progress {
+      margin-bottom: 12px;
+    }
+    .quiz-progress-bar {
+      width: 100%;
+      height: 6px;
+      border-radius: 999px;
+      background: rgba(15, 23, 42, 0.9);
+      overflow: hidden;
+    }
+    .quiz-progress-fill {
+      height: 100%;
+      width: 0;
+      border-radius: inherit;
+      background: linear-gradient(to right, #2df8eb, #00a79c);
+      transition: width 0.2s ease-out;
+    }
+    .quiz-progress-text {
+      margin-top: 6px;
+      font-size: 11px;
+      color: var(--text-muted);
+    }
+    .quiz-step {
+      display: none;
+      animation: fadeIn 0.18s ease-out;
+    }
+    .quiz-step.active { display: block; }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(4px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .quiz-question {
+      font-size: 14px;
+      font-weight: 600;
+      margin-bottom: 6px;
+    }
+    .quiz-help {
+      font-size: 12px;
+      color: var(--text-muted);
+      margin-bottom: 10px;
+    }
+    .quiz-options {
+      display: grid;
+      gap: 8px;
+    }
+    .quiz-option-btn {
+      width: 100%;
+      text-align: left;
+      padding: 10px 11px;
+      border-radius: 999px;
+      border: 1px solid rgba(55, 65, 81, 0.9);
+      background: rgba(15, 23, 42, 0.9);
+      font-size: 13px;
+      color: var(--text-main);
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      transition: all 0.16s ease-out;
+    }
+    .quiz-option-btn span.label {
+      flex: 1;
+    }
+    .quiz-option-btn:hover {
+      border-color: var(--brand-teal);
+      box-shadow: 0 0 0 1px rgba(45, 212, 191, 0.4);
+    }
+    .quiz-option-btn.selected {
+      border-color: var(--brand-teal);
+      background: radial-gradient(circle at top left, rgba(45, 212, 191, 0.2), #020617 70%);
+    }
+    .quiz-option-btn .pill-dot {
+      opacity: 0.8;
+    }
+
+    .quiz-inputs {
+      display: grid;
+      gap: 10px;
+      margin-top: 6px;
+    }
+    .quiz-inputs input {
+      width: 100%;
+      padding: 10px 11px;
+      border-radius: 999px;
+      border: 1px solid rgba(55, 65, 81, 0.9);
+      background: #020617;
+      color: var(--text-main);
+      font-size: 13px;
+      outline: none;
+    }
+    .quiz-inputs input:focus {
+      border-color: var(--brand-teal);
+      box-shadow: 0 0 0 1px rgba(45, 212, 191, 0.4);
+    }
+
+    .quiz-footer {
+      margin-top: 12px;
+      display: flex;
+      justify-content: space-between;
+      gap: 10px;
+      align-items: center;
+      font-size: 11px;
+      color: var(--text-muted);
+    }
+    .quiz-nav {
+      display: flex;
+      gap: 8px;
+    }
+    .btn-mini {
+      padding: 7px 14px;
+      font-size: 12px;
+      border-radius: 999px;
+      border: 1px solid rgba(148, 163, 184, 0.9);
+      background: transparent;
+      color: var(--text-main);
+      cursor: pointer;
+      transition: all 0.16s;
+    }
+    .btn-mini:hover {
+      border-color: var(--brand-teal);
+      color: var(--brand-teal);
+    }
+    .quiz-error {
+      margin-top: 8px;
+      font-size: 11px;
+      color: var(--accent-red);
+      display: none;
+    }
+
+    .quiz-result {
+      margin-top: 10px;
+      border-radius: 16px;
+      padding: 12px 10px;
+      border: 1px dashed rgba(45, 212, 191, 0.6);
+      background: rgba(4, 17, 20, 0.96);
+      font-size: 13px;
+      display: none;
+    }
+    .quiz-result h3 {
+      font-size: 15px;
+      margin-bottom: 4px;
+    }
+    .quiz-result p {
+      font-size: 13px;
+      color: var(--text-muted);
+      margin-bottom: 6px;
+    }
+
+    footer {
+      border-top: 1px solid rgba(31, 41, 55, 0.9);
+      padding: 18px 0 22px;
+      text-align: center;
+      font-size: 11px;
+      color: var(--text-muted);
+    }
+    /* ===== AJUSTES DE ESPAÇO DO HERO ===== */
+
+/* 1) Deixa o conteúdo mais largo (menos espaço vazio nas laterais) */
+.container {
+  max-width: 1220px; /* antes estava 1080px */
+}
+
+/* 2) Menos espaço vertical em todas as sessões */
+section {
+  padding: 40px 0; /* antes era 56px */
+}
+
+/* 3) Hero ainda mais compacto */
+#hero {
+  padding-top: 28px;
+  padding-bottom: 20px;
+}
+
+/* 4) Faz texto + vídeo ocuparem melhor a largura em desktop grande */
+@media (min-width: 1100px) {
+  .hero-inner {
+    grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.9fr);
+    gap: 24px;
+  }
+}
+
+/* 5) Desce um pouco menos o vídeo e o card, reduzindo espaço vazio embaixo */
+.hero-right {
+  align-items: flex-start;
+  gap: 12px;
+}
+
+/* 6) Tira o “buraco” grande antes da próxima seção de dor */
+#pain {
+  padding-top: 16px;
+}
+
+/* ==== HERO VÍDEO PAISAGEM + MODAL ==== */
+
+.hero-right {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  align-items: flex-start;
+}
+
+/* container paisagem 16:9 */
+.hero-video-wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 520px; /* ajusta aqui se quiser maior/menor */
+  aspect-ratio: 16 / 9;
+  border-radius: 24px;
+  overflow: hidden;
+  cursor: pointer;
+  background: radial-gradient(circle at top, #1f2933 0%, #020617 60%, #000 100%);
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.9);
+}
+
+/* vídeo vertical dentro da moldura paisagem */
+.hero-video-wrapper video {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;   /* mostra o vídeo inteiro */
+  background: #000;      /* barras laterais pretas onde faltar imagem */
+}
+
+
+/* overlay com play e texto */
+.hero-video-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 12px 14px;
+  background: linear-gradient(to top, rgba(0,0,0,0.7), transparent 55%);
+  pointer-events: none;
+}
+
+.hero-video-play {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 58px;
+  height: 58px;
+  border-radius: 999px;
+  border: 2px solid rgba(249,250,251,0.9);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(15,23,42,0.75);
+  box-shadow: 0 0 0 4px rgba(15,23,42,0.75);
+}
+
+.hero-video-play::before {
+  content: "";
+  border-style: solid;
+  border-width: 9px 0 9px 16px;
+  border-color: transparent transparent transparent #f9fafb;
+  margin-left: 2px;
+}
+
+.hero-video-caption {
+  font-size: 12px;
+  color: #e5e7eb;
+}
+
+.hero-video-alert {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  padding: 6px 10px;
+  border-radius: 999px;
+  background: rgba(0, 0, 0, 0.78);
+  color: #f9fafb;
+  font-size: 11px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6);
+  animation: pulseAlert 1.4s infinite;
+  pointer-events: none; /* clique continua indo pro wrapper inteiro */
+}
+
+.hero-video-alert-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 999px;
+  background: var(--brand-teal);
+}
+
+@keyframes pulseAlert {
+  0% { transform: translateY(0); opacity: 0.8; }
+  50% { transform: translateY(-1px); opacity: 1; }
+  100% { transform: translateY(0); opacity: 0.8; }
+}
+
+/* card curto embaixo do vídeo */
+.hero-card {
+  border-radius: 18px;
+  padding: 14px 14px 12px;
+  background: radial-gradient(circle at top, #021620 0%, #020b10 60%, #01030a 100%);
+  border: 1px solid rgba(45, 212, 191, 0.4);
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.7);
+  font-size: 13px;
+  max-width: 420px;
+}
+
+.hero-card h3 {
+  font-size: 14px;
+  margin-bottom: 6px;
+}
+
+.hero-card p {
+  font-size: 13px;
+  color: var(--text-muted);
+}
+
+/* MODAL DE VÍDEO */
+.video-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.78);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+}
+
+.video-modal-backdrop.active {
+  display: flex;
+}
+
+.video-modal {
+  width: 100%;
+  max-width: 420px;           /* modal continua vertical, grande */
+  max-height: 90vh;
+  border-radius: 28px;
+  overflow: hidden;
+  background: #000;
+  position: relative;
+  box-shadow: 0 24px 80px rgba(0,0,0,0.9);
+}
+
+.video-modal video {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  background: #000;
+}
+
+.video-modal-close {
+  position: absolute;
+  top: 10px;
+  right: 12px;
+  width: 30px;
+  height: 30px;
+  border-radius: 999px;
+  border: none;
+  background: rgba(15,23,42,0.8);
+  color: #f9fafb;
+  cursor: pointer;
+  font-size: 18px;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Selos de confiança abaixo do CTA do hero */
+.hero-trust {
+  margin-top: 12px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  font-size: 11px;
+  color: var(--text-muted);
+}
+
+.hero-trust-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 5px 9px;
+  border-radius: 999px;
+  border: 1px solid rgba(55, 65, 81, 0.9);
+  background: rgba(6, 17, 28, 0.95);
+}
+
+.hero-trust-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 999px;
+  background: var(--brand-teal);
+}
+/* Faixa horizontal de autoridade no fim do hero */
+.hero-proof-strip {
+  margin-top: 22px;
+  border-radius: 999px;
+  padding: 9px 18px;
+  background: radial-gradient(circle at top left, rgba(0, 212, 201, 0.18), rgba(3, 7, 18, 0.98) 60%);
+  border: 1px solid rgba(45, 212, 191, 0.35);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px 18px;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 11px;
+}
+
+.hero-proof-item {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 160px;
+}
+
+.hero-proof-item strong {
+  font-size: 12px;
+  color: var(--brand-teal);
+}
+
+.hero-proof-item span {
+  color: var(--text-muted);
+}
+
+@media (max-width: 880px) {
+  .hero-proof-strip {
+    border-radius: 18px;
+    align-items: flex-start;
+  }
+}
+
+/* BACK PAIN SECTION – TWO COLUMNS */
+.pain-row {
+  margin-top: 12px;
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+  gap: 20px;
+  align-items: flex-start;
+}
+
+@media (max-width: 880px) {
+  .pain-row {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Card à direita */
+.pain-card {
+  border-radius: 20px;
+  padding: 14px 14px 12px;
+  background: radial-gradient(circle at top left, #021a1a 0%, #020812 60%, #010208 100%);
+  border: 1px solid rgba(45, 212, 191, 0.35);
+  box-shadow: var(--shadow-soft);
+  font-size: 13px;
+}
+
+.pain-card-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 3px 9px;
+  border-radius: 999px;
+  background: rgba(15, 23, 42, 0.95);
+  border: 1px solid rgba(55, 65, 81, 0.9);
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--text-muted);
+  margin-bottom: 8px;
+}
+
+.pain-card-label-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 999px;
+  background: var(--brand-teal);
+}
+
+.pain-card h3 {
+  font-size: 15px;
+  margin-bottom: 6px;
+}
+
+.pain-card-list {
+  list-style: none;
+  margin: 6px 0 8px;
+  padding: 0;
+  display: grid;
+  gap: 4px;
+}
+
+.pain-card-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 6px;
+  color: var(--text-muted);
+}
+
+.pain-card-bullet {
+  margin-top: 4px;
+  width: 5px;
+  height: 5px;
+  border-radius: 999px;
+  background: var(--brand-teal);
+  flex-shrink: 0;
+}
+
+.pain-card-cta {
+  font-size: 12px;
+  color: var(--text-muted);
+  margin-top: 6px;
+}
+
+.pain-card-cta a {
+  color: var(--brand-teal);
+  text-decoration: none;
+}
+
+.pain-card-cta a:hover {
+  text-decoration: underline;
+}
+
+/* Numbered layer list */
+.layers-list .mini-card {
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+}
+
+.layer-number {
+  width: 24px;
+  height: 24px;
+  border-radius: 999px;
+  border: 1px solid rgba(148, 163, 184, 0.9);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text-main);
+  flex-shrink: 0;
+}
+
+.layer-text h3 {
+  font-size: 14px;
+  margin-bottom: 3px;
+}
+
+.layer-text p {
+  font-size: 13px;
+  color: var(--text-muted);
+}
+/* === QUIZ – MAIS LARGO E LEGÍVEL === */
+
+.quiz-shell {
+  max-width: 780px;           /* antes 640px */
+  padding: 28px 24px 22px;    /* mais respiro interno */
+}
+
+/* Título e textos do topo */
+.quiz-header h2 {
+  font-size: 20px;            /* antes 18px */
+}
+
+.quiz-header p {
+  font-size: 13px;            /* antes 12px */
+}
+
+/* Pergunta + ajuda */
+.quiz-question {
+  font-size: 16px;            /* antes 14px */
+}
+
+.quiz-help {
+  font-size: 13px;            /* antes 12px */
+}
+
+/* Botões das respostas */
+.quiz-option-btn {
+  padding: 12px 14px;         /* mais alto e mais largo */
+  font-size: 15px;            /* antes 13px */
+}
+
+/* Inputs de e-mail/telefone */
+.quiz-inputs input {
+  padding: 12px 14px;
+  font-size: 14px;
+}
+
+/* Barra de progresso e rodapé */
+.quiz-progress-text {
+  font-size: 12px;
+}
+
+.quiz-footer {
+  font-size: 12px;
+}
+
+/* Botões Next/Back/See My Results */
+.btn-mini {
+  padding: 9px 16px;
+  font-size: 13px;
+}
+
+/* Texto dos resultados */
+.quiz-result {
+  font-size: 14px;
+}
+
+.quiz-result h3 {
+  font-size: 16px;
+}
+
+/* CONTACT MODAL */
+.contact-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.78);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+}
+
+.contact-modal-backdrop.active {
+  display: flex;
+}
+
+.contact-modal {
+  width: 100%;
+  max-width: 420px;
+  border-radius: 24px;
+  background: radial-gradient(circle at top left, #02141c 0%, #020712 55%, #000 100%);
+  border: 1px solid rgba(45, 212, 191, 0.5);
+  box-shadow: 0 24px 80px rgba(0,0,0,0.9);
+  padding: 20px 18px 16px;
+  position: relative;
+  color: var(--text-main);
+  font-size: 14px;
+}
+
+.contact-modal h3 {
+  font-size: 18px;
+  margin-bottom: 6px;
+}
+
+.contact-modal p {
+  font-size: 13px;
+  color: var(--text-muted);
+  margin-bottom: 14px;
+}
+
+.contact-modal-close {
+  position: absolute;
+  top: 10px;
+  right: 12px;
+  width: 28px;
+  height: 28px;
+  border-radius: 999px;
+  border: none;
+  background: rgba(15,23,42,0.85);
+  color: #f9fafb;
+  cursor: pointer;
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.contact-modal-options {
+  display: grid;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.contact-option {
+  width: 100%;
+  text-align: left;
+  padding: 11px 12px;
+  border-radius: 16px;
+  border: 1px solid rgba(55,65,81,0.9);
+  background: rgba(15,23,42,0.95);
+  cursor: pointer;
+  transition: all 0.16s ease-out;
+}
+
+.contact-option:hover {
+  border-color: var(--brand-teal);
+  box-shadow: 0 0 0 1px rgba(45, 212, 191, 0.4);
+}
+
+.contact-option-title {
+  display: block;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.contact-option-sub {
+  display: block;
+  font-size: 12px;
+  color: var(--text-muted);
+}
+
+.contact-modal-note {
+  font-size: 11px;
+  color: var(--text-muted);
+  display: block;
+}
+
+  </style>
+</head>
+<body>
+<header>
+  <div class="container">
+    <div class="header-inner">
+      <div class="logo-block">
+        <img src="assets/img/logo.png" alt="Green Rest Mattress - Certified Organic Latex" />
+        <div class="logo-text">
+          <strong>Green Rest Mattress</strong>
+          <span>Certified Organic Latex • Therapeutic Support</span>
+        </div>
+      </div>
+      <a href="#" class="btn btn-primary cta-open-modal" data-source="header">
+  Free Sleep Consultation
+</a>
+    </div>
+  </div>
+</header>
+
+<main>
+  <!-- HERO (pouco texto, foco visual + CTA) -->
+<section id="hero">
+  <div class="container">
+
+    <div class="hero-inner">
+      <!-- LADO ESQUERDO: TEXTO + CTAs + SELOS -->
+      <div>
+        <div class="badge">Back Pain • Custom Orthopedic Mattress</div>
+
+        <h1 class="hero-title">
+          Wake Up Without <span>Back Pain</span>.
+        </h1>
+
+        <p class="hero-sub">
+          Custom-built organic mattresses designed around your spine, weight and sleep position — so you stop waking up in pain.
+        </p>
+
+        <div class="hero-ctas">
+          <a href="#" class="btn btn-primary cta-open-modal" data-source="hero">
+  Book Free Consultation
+</a>
+          <a href="#quiz"
+   id="hero-quiz-cta"
+   class="btn btn-ghost">
+  Take the 2-Min Sleep Quiz
+</a>
+        </div>
+
+        <div class="hero-microcopy">
+          Talk to a sleep specialist — not a salesperson. 15 minutes. No pressure.
+        </div>
+
+        <!-- SELOS DE CONFIANÇA -->
+        <div class="hero-trust">
+          <div class="hero-trust-pill">
+            <span class="hero-trust-dot"></span>
+            <span>Certified Organic Latex</span>
+          </div>
+          <div class="hero-trust-pill">
+            <span class="hero-trust-dot"></span>
+            <span>Custom-built for your body</span>
+          </div>
+          <div class="hero-trust-pill">
+            <span class="hero-trust-dot"></span>
+            <span>Back-pain focused design</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- LADO DIREITO: VÍDEO + CARD -->
+      <div class="hero-right">
+        <!-- PREVIEW PAISAGEM CLICÁVEL -->
+        <div class="hero-video-wrapper" id="hero-video-trigger">
+          <video
+            src="assets/videos/depoimento-circo.mp4"
+            muted
+            playsinline
+            loop
+            autoplay
+          ></video>
+
+          <div class="hero-video-overlay">
+            <div class="hero-video-play"></div>
+            <div class="hero-video-caption">
+              From circus accident to pain-free mornings — watch her story.
+            </div>
+          </div>
+
+          <!-- BALÃO DE ALERTA -->
+          <div class="hero-video-alert">
+            <span class="hero-video-alert-dot"></span>
+            <span>Click to see full story</span>
+          </div>
+        </div>
+
+        <!-- CARD DE CONTEXTO -->
+        <div class="hero-card">
+          <h3>From Circus Injury to Pain-Free Mornings</h3>
+          <p>
+            She spent years performing upside down, hanging by her hair, until a serious fall changed everything.
+            During recovery, she chose a Green Rest mattress to protect her spine every night — and today she sleeps without fear of waking up in pain.
+          </p>
+          <p style="margin-top:6px;font-size:11px;color:var(--text-muted);">
+            Click the video above to watch her full story.
+          </p>
+        </div>
+      </div>
+      <!-- fim hero-inner -->
+    </div>
+
+    <!-- FAIXA DE AUTORIDADE EMBAIXO DO HERO -->
+    <div class="hero-proof-strip">
+      <div class="hero-proof-item">
+        <strong>Designed for back pain</strong>
+        <span>Focused on chronic and post-injury back pain — not just “comfort”.</span>
+      </div>
+      <div class="hero-proof-item">
+        <strong>Organic &amp; non-toxic</strong>
+        <span>Certified organic latex and materials chosen for health first.</span>
+      </div>
+      <div class="hero-proof-item">
+        <strong>1:1 sleep specialist</strong>
+        <span>Every consultation is with a specialist, not a call-center script.</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+  <!-- DOR (super enxuto) -->
+  <section id="pain">
+  <div class="container">
+    <div class="pain-row">
+      <!-- LADO ESQUERDO: PERGUNTAS / BULLETS -->
+      <div>
+        <h2 class="section-title">Do You Recognize Yourself Here?</h2>
+        <p class="section-subtitle">
+          If two or more are “yes”, your mattress is most likely part of the problem.
+        </p>
+        <ul class="pill-list">
+          <li><span class="pill-dot"></span> You wake up stiffer than when you went to bed.</li>
+          <li><span class="pill-dot"></span> You’ve already changed mattresses and the pain keeps coming back.</li>
+          <li><span class="pill-dot"></span> Your partner sleeps fine — you wake up sore or exhausted.</li>
+        </ul>
+      </div>
+
+      <!-- LADO DIREITO: SNAPSHOT / MINI-DIAGNÓSTICO -->
+      <div class="pain-card">
+        <div class="pain-card-label">
+          <span class="pain-card-label-dot"></span>
+          <span>Back Pain Snapshot</span>
+        </div>
+        <h3>Is your mattress quietly making this worse?</h3>
+        <ul class="pain-card-list">
+          <li>
+            <span class="pain-card-bullet"></span>
+            <span>You need a few moments just to stand up straight in the morning.</span>
+          </li>
+          <li>
+            <span class="pain-card-bullet"></span>
+            <span>You rely on stretches, painkillers or hot showers just to be able to sleep.</span>
+          </li>
+          <li>
+            <span class="pain-card-bullet"></span>
+            <span>You sleep better on a hotel bed or even the couch than on your own mattress.</span>
+          </li>
+        </ul>
+        <p class="pain-card-cta">
+          If this sounds familiar, <a href="#quiz">take the 2-minute Sleep Quiz</a> and see if a custom Green Rest mattress can actually help your back.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+  <!-- ERRO DO MERCADO + SOLUÇÃO EM CARDS CURTOS -->
+  <section id="solution">
+    <div class="container">
+      <h2 class="section-title">It’s Not You. It’s the Mattress Industry.</h2>
+      <p class="section-subtitle">
+        Most mattresses are built to sit in warehouses, not to support real spines.
+      </p>
+
+      <div class="card-row">
+        <div class="mini-card">
+          <h3>One-Size-Fits-All Firmness</h3>
+          <p>Same mattress for 55 kg and 110 kg. Your spine pays the price.</p>
+        </div>
+        <div class="mini-card">
+          <h3>Foams That Collapse</h3>
+          <p>They feel good for a few months, then your hips sink and pain returns.</p>
+        </div>
+        <div class="mini-card">
+          <h3>Zero Personalization</h3>
+          <p>No adjustment for weight, sleep position or partner needs.</p>
+        </div>
+      </div>
+
+      <div class="card-row" style="margin-top:20px;">
+        <div class="mini-card">
+          <h3>Green Rest: Built for Your Body</h3>
+          <p>Custom layers, organic latex and orthopedic design based on your back-pain profile.</p>
+        </div>
+        <div class="mini-card">
+          <h3>Partner-Friendly</h3>
+          <p>Each side can have different firmness and support — no more compromise.</p>
+        </div>
+        <div class="mini-card">
+          <h3>Adjustments After You Sleep</h3>
+          <p>We can tweak firmness after delivery to match your real nights, not a showroom test.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+<section id="layers">
+  <div class="container">
+    <h2 class="section-title">What’s Inside a Green Rest Mattress</h2>
+    <p class="section-subtitle">
+      Ten carefully engineered layers working together to align your spine, relieve pressure and keep your back supported all night — not just “more foam”.
+    </p>
+
+    <div class="layers-card">
+      <!-- IMAGE WITH 1–10 MARKERS -->
+      <div class="layers-image-wrap">
+        <img src="assets/img/camadas.webp" alt="Side view of Green Rest mattress layers numbered 1 to 10" />
+      </div>
+
+      <!-- DESCRIPTION OF EACH LAYER -->
+      <div class="layers-list">
+        <div class="mini-card">
+          <div class="layer-number">1</div>
+          <div class="layer-text">
+            <h3>Performance Knit Cover</h3>
+            <p>
+              Soft, breathable top fabric with performance yarns that gently reflect body heat as soothing energy,
+              helping circulation and all-night comfort.
+            </p>
+          </div>
+        </div>
+
+        <div class="mini-card">
+          <div class="layer-number">2</div>
+          <div class="layer-text">
+            <h3>Chemical-Free Fire Barrier</h3>
+            <p>
+              Flame-retardant protection without fiberglass or harsh chemical sprays, so you get safety without sacrificing health.
+            </p>
+          </div>
+        </div>
+
+        <div class="mini-card">
+          <div class="layer-number">3</div>
+          <div class="layer-text">
+            <h3>Bio-Ceramic Comfort Film</h3>
+            <p>
+              A thin bio-ceramic layer that helps regulate temperature and supports deep, restorative sleep while keeping the surface smooth.
+            </p>
+          </div>
+        </div>
+
+        <div class="mini-card">
+          <div class="layer-number">4</div>
+          <div class="layer-text">
+            <h3>3D ConvoTech&trade; Cool-Gel Layer</h3>
+            <p>
+              “Egg-crate” 3D design with cooling gel that reduces pressure points, increases airflow and helps keep your back and hips cooler.
+            </p>
+          </div>
+        </div>
+
+        <div class="mini-card">
+          <div class="layer-number">5</div>
+          <div class="layer-text">
+            <h3>Pressure-Relief Latex</h3>
+            <p>
+              Organic latex that adapts to your body curves, cradling shoulders and hips while keeping your lower back supported.
+            </p>
+          </div>
+        </div>
+
+        <div class="mini-card">
+          <div class="layer-number">6</div>
+          <div class="layer-text">
+            <h3>Responsive Support Layer</h3>
+            <p>
+              Zoned support that helps align your spine for different body weights and shapes, so you don’t sink where you need structure.
+            </p>
+          </div>
+        </div>
+
+        <div class="mini-card">
+          <div class="layer-number">7</div>
+          <div class="layer-text">
+            <h3>Intelligent Support Core – Part A</h3>
+            <p>
+              High-density orthopedic foam that adds stability, durability and even support from head to toe.
+            </p>
+          </div>
+        </div>
+
+        <div class="mini-card">
+          <div class="layer-number">8</div>
+          <div class="layer-text">
+            <h3>Shock-Absorbing Transition Layer</h3>
+            <p>
+              Absorbs impact and movement so you feel less of your partner’s tossing and turning and wake up with fewer micro-awakenings.
+            </p>
+          </div>
+        </div>
+
+        <div class="mini-card">
+          <div class="layer-number">9</div>
+          <div class="layer-text">
+            <h3>Intelligent Support Core – Part B</h3>
+            <p>
+              Reinforced base foam that completes the orthopedic structure and keeps the mattress from sagging over time.
+            </p>
+          </div>
+        </div>
+
+        <div class="mini-card">
+          <div class="layer-number">10</div>
+          <div class="layer-text">
+            <h3>Stabilizing Foundation & Edge Support</h3>
+            <p>
+              Structural base that improves edge support, makes it easier to get in and out of bed and keeps every layer above working in alignment.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+  <!-- PROVA SOCIAL + LUGARES PARA FOTOS/VÍDEOS -->
+<section id="social">
+  <div class="container">
+    <h2 class="section-title">Real people, real back pain — finally sleeping again.</h2>
+    <p class="section-subtitle">
+      Stories from people who tried everything, spent money on other mattresses, and only felt real relief once their mattress was adjusted to their own body.
+    </p>
+
+    <div class="testimonial-grid">
+      <div class="review-card">
+        <div class="review-name">JNA Contractors</div>
+        <div class="stars">★★★★★</div>
+        <p>
+          "I used to suffer from back pain, woke up tired and couldn’t even reach my feet to put on my socks.
+          After I bought my Green Rest mattress, my back pain disappeared and I wake up refreshed.
+          The best investment I’ve ever made."
+        </p>
+      </div>
+
+      <div class="review-card">
+        <div class="review-name">Giuliana B.</div>
+        <div class="stars">★★★★★</div>
+        <p>
+          "I really love my new mattress. It helped me with my back pain and I’ve been sleeping so much better.
+          I’m very happy with my purchase."
+        </p>
+      </div>
+
+      <div class="review-card">
+        <div class="review-name">Green Rest Client</div>
+        <div class="stars">★★★★★</div>
+        <p>
+          "I thought all mattresses were the same. I only realized the difference when I stopped waking up stiff.
+          Now I wake up with energy to get through the whole day."
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="factory">
+  <div class="container">
+    <h2 class="section-title">See where your mattress is built — layer by layer.</h2>
+    <p class="section-subtitle">
+      No generic factory. Each mattress is assembled in Orlando, with organic layers tuned to your weight, sleep position and back pain profile.
+    </p>
+
+    <div class="factory-row">
+      <div class="factory-video-wrapper">
+        <!-- replace with your real factory video (MP4 or YouTube embed) -->
+        <video controls muted playsinline poster="factory-thumb.jpg">
+          <source src="assets/videos/factory-orlando.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+      </div>
+
+      <div class="factory-copy">
+        <div class="factory-badge">Inside Green Rest • Orlando, FL</div>
+        <p>
+          We show the factory because we want you to see exactly where your mattress is born:
+          who cuts each layer, who assembles it, who checks quality and how we guarantee proper spinal support.
+        </p>
+        <p>
+          This isn’t a “stock mattress”. It’s spine-focused sleep equipment,
+          built with the same care as if a physical therapist were going to sleep on it every night.
+        </p>
+        <a href="#" class="btn btn-primary cta-open-modal"
+   data-source="factory"
+   style="margin-top:4px;max-width:260px;">
+  Talk to a sleep specialist &amp; see the factory
+</a>
+
+        <span style="font-size:11px;color:var(--text-muted);">
+          No-pressure call. Watch, ask your questions and decide later.
+        </span>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+  <!-- CTA CURTO ANTES DO QUIZ -->
+  <section id="cta">
+    <div class="container">
+      <h2 class="section-title">Let’s See If a Custom Mattress Can Actually Help You</h2>
+      <p class="section-subtitle">
+        Answer a few quick questions and get a personalized sleep plan in under 2 minutes.
+      </p>
+      <a href="#quiz" id="start-quiz-cta" class="btn btn-primary">Start the Sleep Quiz</a>
+
+    </div>
+  </section>
+
+  <!-- QUIZ STEP-BY-STEP -->
+  <section id="quiz">
+    <div class="container">
+      <div class="quiz-shell">
+        <div class="quiz-header">
+          <div>
+            <h2>2-Minute Back Pain Sleep Quiz</h2>
+            <p>6 quick steps. No email until the end. Let’s see what’s really going on with your sleep.</p>
+          </div>
+          
+        </div>
+
+        <div class="quiz-progress">
+          <div class="quiz-progress-bar">
+            <div class="quiz-progress-fill" id="quiz-progress-fill"></div>
+          </div>
+          <div class="quiz-progress-text" id="quiz-progress-text">Step 1 of 6</div>
+        </div>
+
+        <form id="sleep-quiz" autocomplete="on">
+          <!-- STEP 1 -->
+          <div class="quiz-step active" data-step="1">
+            <div class="quiz-question">What is your biggest sleep challenge right now?</div>
+            <div class="quiz-help">Choose the one that bothers you the most.</div>
+            <div class="quiz-options">
+              <button type="button" class="quiz-option-btn" data-name="q1_problem" data-value="back_pain">
+                <span class="label">Back pain (especially lower back)</span>
+                <span class="pill-dot"></span>
+              </button>
+              <button type="button" class="quiz-option-btn" data-name="q1_problem" data-value="shoulder_hip">
+                <span class="label">Shoulder or hip pain</span>
+                <span class="pill-dot"></span>
+              </button>
+              <button type="button" class="quiz-option-btn" data-name="q1_problem" data-value="allergies">
+                <span class="label">Allergies or sensitivities</span>
+                <span class="pill-dot"></span>
+              </button>
+              <button type="button" class="quiz-option-btn" data-name="q1_problem" data-value="hot">
+                <span class="label">Sleeping too hot</span>
+                <span class="pill-dot"></span>
+              </button>
+              <button type="button" class="quiz-option-btn" data-name="q1_problem" data-value="sharing">
+                <span class="label">Sharing a bed with very different body needs</span>
+                <span class="pill-dot"></span>
+              </button>
+            </div>
+          </div>
+
+          <!-- STEP 2 -->
+          <div class="quiz-step" data-step="2">
+            <div class="quiz-question">How often does this affect your sleep?</div>
+            <div class="quiz-options">
+              <button type="button" class="quiz-option-btn" data-name="q2_frequency" data-value="every_night">
+                <span class="label">Every night</span>
+                <span class="pill-dot"></span>
+              </button>
+              <button type="button" class="quiz-option-btn" data-name="q2_frequency" data-value="three_four">
+                <span class="label">3–4 nights a week</span>
+                <span class="pill-dot"></span>
+              </button>
+              <button type="button" class="quiz-option-btn" data-name="q2_frequency" data-value="occasional">
+                <span class="label">Occasionally</span>
+                <span class="pill-dot"></span>
+              </button>
+            </div>
+          </div>
+
+          <!-- STEP 3 -->
+          <div class="quiz-step" data-step="3">
+            <div class="quiz-question">Have you tried other premium mattresses before?</div>
+            <div class="quiz-options">
+              <button type="button" class="quiz-option-btn" data-name="q3_tried" data-value="yes_didnt_work">
+                <span class="label">Yes, and it didn’t work</span>
+                <span class="pill-dot"></span>
+              </button>
+              <button type="button" class="quiz-option-btn" data-name="q3_tried" data-value="yes_helped_little">
+                <span class="label">Yes, it helped a little</span>
+                <span class="pill-dot"></span>
+              </button>
+              <button type="button" class="quiz-option-btn" data-name="q3_tried" data-value="no_first">
+                <span class="label">No, this is my first real upgrade</span>
+                <span class="pill-dot"></span>
+              </button>
+            </div>
+          </div>
+
+          <!-- STEP 4 -->
+          <div class="quiz-step" data-step="4">
+            <div class="quiz-question">Do you sleep alone or share your bed?</div>
+            <div class="quiz-options">
+              <button type="button" class="quiz-option-btn" data-name="q4_alone" data-value="alone">
+                <span class="label">I sleep alone</span>
+                <span class="pill-dot"></span>
+              </button>
+              <button type="button" class="quiz-option-btn" data-name="q4_alone" data-value="with_partner">
+                <span class="label">I sleep with a partner</span>
+                <span class="pill-dot"></span>
+              </button>
+            </div>
+            <div id="partner-extra" style="margin-top:12px;display:none;">
+              <div class="quiz-help">Do you and your partner have different weights or sleep positions?</div>
+              <div class="quiz-options">
+                <button type="button" class="quiz-option-btn" data-name="q4_partner_diff" data-value="yes_diff">
+                  <span class="label">Yes, very different</span>
+                  <span class="pill-dot"></span>
+                </button>
+                <button type="button" class="quiz-option-btn" data-name="q4_partner_diff" data-value="no_same">
+                  <span class="label">No, we’re pretty similar</span>
+                  <span class="pill-dot"></span>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- STEP 5 -->
+          <div class="quiz-step" data-step="5">
+            <div class="quiz-question">When it comes to fixing your sleep, what matters most?</div>
+            <div class="quiz-options">
+              <button type="button" class="quiz-option-btn" data-name="q6_value" data-value="long_term">
+                <span class="label">Long-term solution</span>
+                <span class="pill-dot"></span>
+              </button>
+              <button type="button" class="quiz-option-btn" data-name="q6_value" data-value="health_materials">
+                <span class="label">Health & materials</span>
+                <span class="pill-dot"></span>
+              </button>
+              <button type="button" class="quiz-option-btn" data-name="q6_value" data-value="comfort_only">
+                <span class="label">Comfort only</span>
+                <span class="pill-dot"></span>
+              </button>
+              <button type="button" class="quiz-option-btn" data-name="q6_value" data-value="lowest_price">
+                <span class="label">Lowest price</span>
+                <span class="pill-dot"></span>
+              </button>
+            </div>
+          </div>
+
+          <!-- STEP 6 -->
+          <div class="quiz-step" data-step="6">
+            <div class="quiz-question">Last step — where should we send your sleep plan?</div>
+            <div class="quiz-help">We’ll send your results and, if it makes sense, invite you to a free consultation.</div>
+            <div class="quiz-inputs">
+              <input type="email" name="email" placeholder="Email" required />
+              <input type="tel" name="phone" placeholder="Phone (optional)" />
+            </div>
+          </div>
+
+          <div class="quiz-error" id="quiz-error">Please answer this step before continuing.</div>
+
+          <div class="quiz-footer">
+            <div class="quiz-nav">
+              <button type="button" class="btn-mini" id="quiz-prev">Back</button>
+              <button type="button" class="btn-mini" id="quiz-next">Next</button>
+              <button type="submit" class="btn-mini" id="quiz-submit" style="display:none;">See My Results</button>
+            </div>
+            <div>By continuing, you agree to be contacted about your sleep plan. You can opt out anytime.</div>
+          </div>
+
+          <div class="quiz-result" id="quiz-result-high">
+            <h3>You’re a strong candidate for a custom Green Rest mattress.</h3>
+            <p>Based on your answers, your pain is frequent and you value long-term health. A custom configuration is likely to have a big impact.</p>
+            <p>The next best step is a short call with a sleep specialist to design your setup.</p>
+            <a href="#" class="btn btn-primary cta-open-modal"
+            data-source="quiz_high"
+            style="margin-top:6px;">
+            Book Free Consultation
+            </a>
+          </div>
+
+          <div class="quiz-result" id="quiz-result-medium">
+            <h3>You’re a good fit — let’s start with guidance.</h3>
+            <p>Your answers show meaningful issues, but you might still be comparing options. We’ll send targeted content and give you the option to book a free call.</p>
+          </div>
+
+          <div class="quiz-result" id="quiz-result-low">
+            <h3>Let’s start with education.</h3>
+            <p>Right now your answers point to lighter or occasional issues. We’ll send simple changes you can try — and you can book a call later if your pain increases.</p>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="container">
+    © 2025 Green Rest Mattress. All rights reserved. • <a href="https://grmattress.com/" style="color:var(--brand-teal);text-decoration:none;">Official Site</a>
+  </div>
+</footer>
+
+<!-- MODAL DE VÍDEO -->
+<div class="video-modal-backdrop" id="video-modal">
+  <div class="video-modal">
+    <button class="video-modal-close" id="video-modal-close" aria-label="Close video">×</button>
+    <video
+      id="video-modal-player"
+      src="assets/videos/depoimento-circo.mp4"  
+      controls
+      playsinline
+    ></video>
+  </div>
+</div>
+<div class="contact-modal-backdrop" id="contact-modal">
+  <div class="contact-modal">
+    <button class="contact-modal-close" id="contact-modal-close" aria-label="Close contact options">×</button>
+    <h3>How do you prefer to talk?</h3>
+    <p>Choose how you want to connect with a Green Rest sleep specialist.</p>
+
+    <div class="contact-modal-options">
+      <button type="button" class="contact-option" data-channel="whatsapp">
+        <span class="contact-option-title">WhatsApp</span>
+        <span class="contact-option-sub">Fast response, send photos and questions.</span>
+      </button>
+
+      <button type="button" class="contact-option" data-channel="sms">
+        <span class="contact-option-title">Text message (SMS)</span>
+        <span class="contact-option-sub">Simple text conversation, no app needed.</span>
+      </button>
+    </div>
+
+    <small class="contact-modal-note">
+      We’ll send your details and quiz answers (if completed) to our team so you don’t have to repeat everything.
+    </small>
+  </div>
+</div>
+
+<script>
+  // ====== CONFIG GLOBAL ======
+  // ÚNICO endpoint para todos os eventos / leads (Make)
+  const ENDPOINT = 'https://hook.us2.make.com/8aq5yt7cn6sde26l1vwun3ybbujpnwrh';
+
+    // captura UTMs da URL em variáveis planas (strings)
+  const urlParams = new URLSearchParams(window.location.search);
+
+  const utmSource   = urlParams.get('utm_source')   || '';
+  const utmMedium   = urlParams.get('utm_medium')   || '';
+  const utmCampaign = urlParams.get('utm_campaign') || '';
+  const utmContent  = urlParams.get('utm_content')  || '';
+  const utmTerm     = urlParams.get('utm_term')     || '';
+
+
+  // ====== QUIZ ======
+  const totalSteps = 6;
+  let currentStep = 1;
+  const quizData = {};
+
+  const steps = document.querySelectorAll('.quiz-step');
+  const progressFill = document.getElementById('quiz-progress-fill');
+  const progressText = document.getElementById('quiz-progress-text');
+  const errorBox = document.getElementById('quiz-error');
+  const prevBtn = document.getElementById('quiz-prev');
+  const nextBtn = document.getElementById('quiz-next');
+  const submitBtn = document.getElementById('quiz-submit');
+
+  const resultHigh = document.getElementById('quiz-result-high');
+  const resultMedium = document.getElementById('quiz-result-medium');
+  const resultLow = document.getElementById('quiz-result-low');
+
+  function updateProgress() {
+    const percent = (currentStep - 1) / (totalSteps - 1) * 100;
+    progressFill.style.width = percent + '%';
+    progressText.textContent = 'Step ' + currentStep + ' of ' + totalSteps;
+
+    prevBtn.style.display = currentStep === 1 ? 'none' : 'inline-flex';
+    nextBtn.style.display = currentStep === totalSteps ? 'none' : 'inline-flex';
+    submitBtn.style.display = currentStep === totalSteps ? 'inline-flex' : 'none';
+  }
+
+  function showStep(step) {
+    steps.forEach(s => s.classList.remove('active'));
+    const target = document.querySelector('.quiz-step[data-step="' + step + '"]');
+    if (target) target.classList.add('active');
+    currentStep = step;
+    errorBox.style.display = 'none';
+    updateProgress();
+  }
+
+  function validateCurrentStep() {
+    const stepEl = document.querySelector('.quiz-step[data-step="' + currentStep + '"]');
+    if (currentStep === 6) {
+      const emailInput = stepEl.querySelector('input[name="email"]');
+      if (!emailInput.value.trim()) {
+        errorBox.style.display = 'block';
+        return false;
+      }
+      return true;
+    } else {
+      const selected = stepEl.querySelector('.quiz-option-btn.selected');
+      if (!selected) {
+        errorBox.style.display = 'block';
+        return false;
+      }
+      return true;
+    }
+  }
+
+  function hideResults() {
+    resultHigh.style.display = 'none';
+    resultMedium.style.display = 'none';
+    resultLow.style.display = 'none';
+  }
+
+  // envia submissão do quiz para o CRM sem redirecionar
+  // envia submissão do quiz para o CRM sem redirecionar
+function sendQuizToCRM(score) {
+  const timestamp = new Date().toISOString();
+
+  const emailInput = document.querySelector('#sleep-quiz input[name="email"]');
+  const phoneInput = document.querySelector('#sleep-quiz input[name="phone"]');
+
+  const email = emailInput ? emailInput.value.trim() : '';
+  const phone = phoneInput ? phoneInput.value.trim() : '';
+
+    const payload = {
+    event_type: 'quiz_submit',
+    score: score,
+    email: email || null,
+    phone: phone || null,
+    quiz_answers: quizData || {},
+    utm_source:   utmSource   || null,
+    utm_medium:   utmMedium   || null,
+    utm_campaign: utmCampaign || null,
+    utm_content:  utmContent  || null,
+    utm_term:     utmTerm     || null,
+    created_at: timestamp
+  };
+
+
+  sendToCRM(payload);
+}
+
+  // clique em alternativas do quiz
+  document.querySelectorAll('.quiz-option-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const name = btn.dataset.name;
+      const value = btn.dataset.value;
+
+      const siblings = btn.closest('.quiz-options').querySelectorAll('.quiz-option-btn');
+      siblings.forEach(s => s.classList.remove('selected'));
+      btn.classList.add('selected');
+
+      quizData[name] = value;
+
+      // follow-up de parceiro
+      if (name === 'q4_alone') {
+        const partnerExtra = document.getElementById('partner-extra');
+        if (value === 'with_partner') {
+          partnerExtra.style.display = 'block';
+        } else {
+          partnerExtra.style.display = 'none';
+          delete quizData['q4_partner_diff'];
+          const partnerBtns = partnerExtra.querySelectorAll('.quiz-option-btn');
+          partnerBtns.forEach(b => b.classList.remove('selected'));
+        }
+      }
+
+      errorBox.style.display = 'none';
+
+      if (currentStep < totalSteps) {
+        showStep(currentStep + 1);
+      }
+    });
+  });
+
+  prevBtn.addEventListener('click', () => {
+    if (currentStep > 1) {
+      showStep(currentStep - 1);
+    }
+  });
+
+  nextBtn.addEventListener('click', () => {
+    if (!validateCurrentStep()) return;
+    if (currentStep < totalSteps) {
+      showStep(currentStep + 1);
+    }
+  });
+
+  document.getElementById('sleep-quiz').addEventListener('submit', function (e) {
+    e.preventDefault();
+    if (!validateCurrentStep()) return;
+    hideResults();
+
+    let score = 0;
+    const freq = quizData['q2_frequency'];
+    const tried = quizData['q3_tried'];
+    const alone = quizData['q4_alone'];
+    const partnerDiff = quizData['q4_partner_diff'];
+    const value = quizData['q6_value'];
+
+    if (freq === 'every_night') score += 3;
+    else if (freq === 'three_four') score += 2;
+
+    if (tried === 'yes_didnt_work' || tried === 'yes_helped_little') score += 2;
+
+    if (alone === 'with_partner' && partnerDiff === 'yes_diff') score += 3;
+
+    if (value === 'long_term' || value === 'health_materials') score += 2;
+    else if (value === 'comfort_only') score += 1;
+    else if (value === 'lowest_price') score -= 5;
+
+    // Classificação (UMA vez só)
+    if (score >= 8) {
+      resultHigh.style.display = 'block';
+    } else if (score >= 5) {
+      resultMedium.style.display = 'block';
+    } else {
+      resultLow.style.display = 'block';
+    }
+
+    // envia para o CRM (Make)
+    sendQuizToCRM(score);
+  });
+
+  // init quiz
+  showStep(1);
+
+  // ====== HERO VÍDEO + MODAL ======
+  const heroTrigger = document.getElementById('hero-video-trigger');
+  const modalBackdrop = document.getElementById('video-modal');
+  const modalClose = document.getElementById('video-modal-close');
+  const modalVideo = document.getElementById('video-modal-player');
+
+  const heroPreviewVideo = heroTrigger ? heroTrigger.querySelector('video') : null;
+
+  window.addEventListener('load', function () {
+    if (heroPreviewVideo) {
+      heroPreviewVideo.muted = true;
+      const playPromise = heroPreviewVideo.play();
+      if (playPromise && typeof playPromise.then === 'function') {
+        playPromise.catch(function (err) {
+          console.log('Autoplay bloqueado pelo navegador:', err);
+        });
+      }
+    }
+  });
+
+  function openVideoModal() {
+    if (!modalBackdrop || !modalVideo) return;
+    modalBackdrop.classList.add('active');
+    try {
+      modalVideo.currentTime = 0;
+      modalVideo.play();
+    } catch (e) {
+      console.log(e);
+    }
+  }
+
+  function closeVideoModal() {
+    if (!modalBackdrop || !modalVideo) return;
+    modalBackdrop.classList.remove('active');
+    try {
+      modalVideo.pause();
+    } catch (e) {
+      console.log(e);
+    }
+  }
+
+  if (heroTrigger) {
+    heroTrigger.addEventListener('click', openVideoModal);
+  }
+  if (modalClose) {
+    modalClose.addEventListener('click', closeVideoModal);
+  }
+  if (modalBackdrop) {
+    modalBackdrop.addEventListener('click', function (e) {
+      if (e.target === modalBackdrop) {
+        closeVideoModal();
+      }
+    });
+  }
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && modalBackdrop && modalBackdrop.classList.contains('active')) {
+      closeVideoModal();
+    }
+  });
+
+  // ====== MODAL DE CONTATO (WHATSAPP / SMS) ======
+  const contactModal = document.getElementById('contact-modal');
+  const contactModalClose = document.getElementById('contact-modal-close');
+  const contactOptions = contactModal ? contactModal.querySelectorAll('.contact-option') : [];
+  let currentLeadSource = null; // hero, header, quiz_high etc.
+
+  function openContactModal(source) {
+    currentLeadSource = source || 'unknown';
+    if (contactModal) contactModal.classList.add('active');
+  }
+
+  function closeContactModal() {
+    if (contactModal) contactModal.classList.remove('active');
+  }
+
+  // todos CTAs que abrem o modal devem ter .cta-open-modal + data-source
+  document.querySelectorAll('.cta-open-modal').forEach(btn => {
+    btn.addEventListener('click', function (e) {
+      e.preventDefault();
+      const source = btn.dataset.source || 'unknown';
+      openContactModal(source);
+    });
+  });
+
+  if (contactModalClose) {
+    contactModalClose.addEventListener('click', closeContactModal);
+  }
+  if (contactModal) {
+    contactModal.addEventListener('click', function (e) {
+      if (e.target === contactModal) {
+        closeContactModal();
+      }
+    });
+  }
+
+// ====== CONFIG CRM / MAKE WEBHOOK ======
+const CRM_ENDPOINT = 'https://hook.us2.make.com/8aq5yt7cn6sde26l1vwun3ybbujpnwrh';
+
+function sendToCRM(payload) {
+  // não precisamos da resposta, só disparar o POST
+  fetch(CRM_ENDPOINT, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(payload),
+    mode: 'cors',
+    credentials: 'omit',  // MUITO IMPORTANTE: nada de cookies
+    keepalive: true       // tenta concluir mesmo se a página navegar
+  }).catch(err => {
+    console.log('CRM tracking error:', err);
+  });
+}
+
+  
+function buildLeadPayload(channel) {
+  const timestamp = new Date().toISOString();
+
+  const emailInput = document.querySelector('#sleep-quiz input[name="email"]');
+  const phoneInput = document.querySelector('#sleep-quiz input[name="phone"]');
+
+  const email = emailInput ? emailInput.value.trim() : '';
+  const phone = phoneInput ? phoneInput.value.trim() : '';
+
+    const payload = {
+    event_type: 'contact',
+    channel: channel,
+    source: currentLeadSource,
+    email: email || null,
+    phone: phone || null,
+    quiz_answers: quizData || {},
+    created_at: timestamp,
+    utm_source:   utmSource   || null,
+    utm_medium:   utmMedium   || null,
+    utm_campaign: utmCampaign || null,
+    utm_content:  utmContent  || null,
+    utm_term:     utmTerm     || null
+  };
+
+
+  return payload;
+}
+
+
+// envia lead pro CRM e depois redireciona para WhatsApp ou SMS
+function sendLeadAndRedirect(channel) {
+  const payload = buildLeadPayload(channel);
+  sendToCRM(payload);  // só dispara, sem esperar
+
+  const phoneForLink = '+14075550123'; // TODO: telefone do cliente em formato E.164
+
+  if (channel === 'whatsapp') {
+    const msg = encodeURIComponent(
+      'Hi, I just completed the Green Rest back-pain page and I’d like to talk to a sleep specialist.'
+    );
+    window.location.href =
+      'https://wa.me/' + phoneForLink.replace('+', '') + '?text=' + msg;
+  } else if (channel === 'sms') {
+    const body = encodeURIComponent(
+      'Green Rest: I’d like help with my back pain and mattress.'
+    );
+    window.location.href = 'sms:' + phoneForLink + '?&body=' + body;
+  }
+}
+
+
+  contactOptions.forEach(opt => {
+    opt.addEventListener('click', function () {
+      const channel = opt.dataset.channel; // whatsapp ou sms
+      closeContactModal();
+      sendLeadAndRedirect(channel);
+    });
+  });
+
+  // ====== EVENTO SIMPLES (por ex. CTA "Start the Sleep Quiz") ======
+ 
+const startQuizCta = document.getElementById('start-quiz-cta');   // botão da seção CTA
+const heroQuizCta  = document.getElementById('hero-quiz-cta');    // botão do hero
+
+function sendSimpleEvent(eventType) {
+  const payload = {
+    event_type: eventType,
+    utm: utmData || {},
+    created_at: new Date().toISOString()
+  };
+
+  sendToCRM(payload);
+}
+
+// CTA "Start the Sleep Quiz" (seção antes do quiz)
+if (startQuizCta) {
+  startQuizCta.addEventListener('click', function () {
+    sendSimpleEvent('quiz_start_section');
+  });
+}
+
+// CTA "Take the 2-Min Sleep Quiz" (botão do hero)
+if (heroQuizCta) {
+  heroQuizCta.addEventListener('click', function () {
+    sendSimpleEvent('quiz_start_hero');
+  });
+}
+
+</script>
+
+
+
+
+</body>
+</html>
