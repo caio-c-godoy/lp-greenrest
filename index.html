@@ -1250,20 +1250,19 @@ section {
 }
 /* MOBILE: empilhar logo + botão e evitar invasão de texto */
 @media (max-width: 640px) {
-  /* container que envolve o logo + texto + botão */
-  .hero-brand-row {
-    display: flex;           /* garante flex mesmo se já estiver */
-    flex-direction: column;  /* empilha em vez de lado a lado */
+  .hero-header-top {
+    display: flex;
+    flex-direction: column;
     align-items: flex-start;
     gap: 1rem;
   }
 
-  /* o botão do topo ("Free Sleep Consultation") */
-  .hero-brand-row .hero-header-cta {
-    width: 100%;          /* botão ocupa a largura inteira */
-    text-align: center;   /* texto centralizado */
+  .hero-header-top .hero-nav-cta {
+    width: 100%;
+    text-align: center;
   }
 }
+
 
   </style>
 </head>
