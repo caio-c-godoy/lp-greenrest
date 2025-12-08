@@ -738,6 +738,12 @@ section {
   background: #000;      /* barras laterais pretas onde faltar imagem */
 }
 
+.hero-video-wrapper img.hero-video-thumb {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
 
 /* overlay com play e texto */
 .hero-video-overlay {
@@ -1190,6 +1196,25 @@ section {
   margin-bottom: 10px;
 }
 
+.video-modal-iframe-wrap {
+  position: relative;
+  width: 100%;
+  max-width: 420px;     /* igual ao que você já usava no modal */
+  margin: 0 auto;
+  padding-bottom: 177.78%;  /* 9:16 para vídeo vertical */
+  height: 0;
+  overflow: hidden;
+  background: #000;
+}
+
+.video-modal-iframe-wrap iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
 .contact-option {
   width: 100%;
   text-align: left;
@@ -1222,6 +1247,22 @@ section {
   font-size: 11px;
   color: var(--text-muted);
   display: block;
+}
+/* MOBILE: empilhar logo + botão e evitar invasão de texto */
+@media (max-width: 640px) {
+  /* container que envolve o logo + texto + botão */
+  .hero-brand-row {
+    display: flex;           /* garante flex mesmo se já estiver */
+    flex-direction: column;  /* empilha em vez de lado a lado */
+    align-items: flex-start;
+    gap: 1rem;
+  }
+
+  /* o botão do topo ("Free Sleep Consultation") */
+  .hero-brand-row .hero-header-cta {
+    width: 100%;          /* botão ocupa a largura inteira */
+    text-align: center;   /* texto centralizado */
+  }
 }
 
   </style>
@@ -1298,27 +1339,26 @@ section {
       <div class="hero-right">
         <!-- PREVIEW PAISAGEM CLICÁVEL -->
         <div class="hero-video-wrapper" id="hero-video-trigger">
-          <video
-            src="assets/videos/depoimento-circo.mp4"
-            muted
-            playsinline
-            loop
-            autoplay
-          ></video>
+        <!-- THUMB ESTÁTICA (PRINT DO VÍDEO) -->
+        <img
+          src="assets/img/depoimento-thumb.jpg"
+          alt="From circus accident to pain-free mornings — Green Rest testimonial"
+          class="hero-video-thumb"
+        />
 
-          <div class="hero-video-overlay">
-            <div class="hero-video-play"></div>
-            <div class="hero-video-caption">
-              From circus accident to pain-free mornings — watch her story.
-            </div>
-          </div>
-
-          <!-- BALÃO DE ALERTA -->
-          <div class="hero-video-alert">
-            <span class="hero-video-alert-dot"></span>
-            <span>Click to see full story</span>
+        <div class="hero-video-overlay">
+          <div class="hero-video-play"></div>
+          <div class="hero-video-caption">
+            From circus accident to pain-free mornings — watch her story.
           </div>
         </div>
+
+        <div class="hero-video-alert">
+          <span class="hero-video-alert-dot"></span>
+          <span>Click to see full story</span>
+        </div>
+      </div>
+
 
         <!-- CARD DE CONTEXTO -->
         <div class="hero-card">
@@ -1572,7 +1612,7 @@ section {
 
     <div class="testimonial-grid">
       <div class="review-card">
-        <div class="review-name">JNA Contractors</div>
+        <div class="review-name">Katen</div>
         <div class="stars">★★★★★</div>
         <p>
           "I used to suffer from back pain, woke up tired and couldn’t even reach my feet to put on my socks.
@@ -1591,7 +1631,7 @@ section {
       </div>
 
       <div class="review-card">
-        <div class="review-name">Green Rest Client</div>
+        <div class="review-name">John Smith</div>
         <div class="stars">★★★★★</div>
         <p>
           "I thought all mattresses were the same. I only realized the difference when I stopped waking up stiff.
@@ -1845,18 +1885,26 @@ section {
   </div>
 </footer>
 
-<!-- MODAL DE VÍDEO -->
+
+<!-- MODAL DE VÍDEO (YOUTUBE) -->
 <div class="video-modal-backdrop" id="video-modal">
   <div class="video-modal">
     <button class="video-modal-close" id="video-modal-close" aria-label="Close video">×</button>
-    <video
-      id="video-modal-player"
-      src="assets/videos/depoimento-circo.mp4"  
-      controls
-      playsinline
-    ></video>
+
+    <div class="video-modal-iframe-wrap">
+      <iframe
+        id="video-modal-iframe"
+        src=""
+        title="Green Rest circus injury testimonial"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        allowfullscreen
+      ></iframe>
+    </div>
   </div>
 </div>
+
+
 <div class="contact-modal-backdrop" id="contact-modal">
   <div class="contact-modal">
     <button class="contact-modal-close" id="contact-modal-close" aria-label="Close contact options">×</button>
@@ -2071,65 +2119,53 @@ function sendQuizToCRM(score) {
   // init quiz
   showStep(1);
 
-  // ====== HERO VÍDEO + MODAL ======
-  const heroTrigger = document.getElementById('hero-video-trigger');
-  const modalBackdrop = document.getElementById('video-modal');
-  const modalClose = document.getElementById('video-modal-close');
-  const modalVideo = document.getElementById('video-modal-player');
+ // ====== HERO VÍDEO (YOUTUBE) + MODAL ======
+const heroTrigger = document.getElementById('hero-video-trigger');
+const modalBackdrop = document.getElementById('video-modal');
+const modalClose = document.getElementById('video-modal-close');
+const modalIframe = document.getElementById('video-modal-iframe');
 
-  const heroPreviewVideo = heroTrigger ? heroTrigger.querySelector('video') : null;
+// TROQUE PELO ID REAL DO VÍDEO NO YOUTUBE
+// Exemplo: https://www.youtube.com/watch?v=AbCdEfG1234  → 'AbCdEfG1234'
+const YT_VIDEO_ID = 'AbCdEfG1234';
+const YT_EMBED_URL =
+  'https://www.youtube.com/embed/' +
+  YT_VIDEO_ID +
+  '?autoplay=1&rel=0&modestbranding=1';
 
-  window.addEventListener('load', function () {
-    if (heroPreviewVideo) {
-      heroPreviewVideo.muted = true;
-      const playPromise = heroPreviewVideo.play();
-      if (playPromise && typeof playPromise.then === 'function') {
-        playPromise.catch(function (err) {
-          console.log('Autoplay bloqueado pelo navegador:', err);
-        });
-      }
-    }
-  });
+function openVideoModal() {
+  if (!modalBackdrop || !modalIframe) return;
+  modalBackdrop.classList.add('active');
+  // injeta o SRC só quando abre (já com autoplay)
+  modalIframe.src = YT_EMBED_URL;
+}
 
-  function openVideoModal() {
-    if (!modalBackdrop || !modalVideo) return;
-    modalBackdrop.classList.add('active');
-    try {
-      modalVideo.currentTime = 0;
-      modalVideo.play();
-    } catch (e) {
-      console.log(e);
-    }
-  }
+function closeVideoModal() {
+  if (!modalBackdrop || !modalIframe) return;
+  modalBackdrop.classList.remove('active');
+  // limpa o SRC para parar o vídeo
+  modalIframe.src = '';
+}
 
-  function closeVideoModal() {
-    if (!modalBackdrop || !modalVideo) return;
-    modalBackdrop.classList.remove('active');
-    try {
-      modalVideo.pause();
-    } catch (e) {
-      console.log(e);
-    }
-  }
-
-  if (heroTrigger) {
-    heroTrigger.addEventListener('click', openVideoModal);
-  }
-  if (modalClose) {
-    modalClose.addEventListener('click', closeVideoModal);
-  }
-  if (modalBackdrop) {
-    modalBackdrop.addEventListener('click', function (e) {
-      if (e.target === modalBackdrop) {
-        closeVideoModal();
-      }
-    });
-  }
-  document.addEventListener('keydown', function (e) {
-    if (e.key === 'Escape' && modalBackdrop && modalBackdrop.classList.contains('active')) {
+if (heroTrigger) {
+  heroTrigger.addEventListener('click', openVideoModal);
+}
+if (modalClose) {
+  modalClose.addEventListener('click', closeVideoModal);
+}
+if (modalBackdrop) {
+  modalBackdrop.addEventListener('click', function (e) {
+    if (e.target === modalBackdrop) {
       closeVideoModal();
     }
   });
+}
+document.addEventListener('keydown', function (e) {
+  if (e.key === 'Escape' && modalBackdrop && modalBackdrop.classList.contains('active')) {
+    closeVideoModal();
+  }
+});
+
 
   // ====== MODAL DE CONTATO (WHATSAPP / SMS) ======
   const contactModal = document.getElementById('contact-modal');
