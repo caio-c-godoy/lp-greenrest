@@ -1344,7 +1344,7 @@ section {
         <div class="hero-video-wrapper" id="hero-video-trigger">
         <!-- THUMB ESTÁTICA (PRINT DO VÍDEO) -->
         <img
-          src="assets/img/depoimento-thumb.jpg"
+          src="assets/img/hero_video_frame.jpeg"
           alt="From circus accident to pain-free mornings — Green Rest testimonial"
           class="hero-video-thumb"
         />
@@ -1896,13 +1896,16 @@ section {
 
     <div class="video-modal-iframe-wrap">
       <iframe
-        id="video-modal-iframe"
-        src=""
-        title="Green Rest circus injury testimonial"
-        frameborder="0"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-        allowfullscreen
-      ></iframe>
+      id="video-modal-iframe"
+      src=""
+      title="Green Rest circus injury testimonial"
+      frameborder="0"
+      referrerpolicy="strict-origin-when-cross-origin"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+      allowfullscreen
+    ></iframe>
+
+
     </div>
   </div>
 </div>
@@ -2130,7 +2133,7 @@ const modalIframe = document.getElementById('video-modal-iframe');
 
 // TROQUE PELO ID REAL DO VÍDEO NO YOUTUBE
 // Exemplo: https://www.youtube.com/watch?v=AbCdEfG1234  → 'AbCdEfG1234'
-const YT_VIDEO_ID = 'AbCdEfG1234';
+const YT_VIDEO_ID = 'ZxcZRhAFBtc';
 const YT_EMBED_URL =
   'https://www.youtube.com/embed/' +
   YT_VIDEO_ID +
