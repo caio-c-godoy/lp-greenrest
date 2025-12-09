@@ -394,14 +394,14 @@
   background: #000;
   box-shadow: var(--shadow-soft);
   border: 1px solid var(--border-soft);
+
+  /* adiciona isso: */
+  position: relative;
+  aspect-ratio: 16 / 9;
+  cursor: pointer;
 }
 
-.factory-video-wrapper video,
-.factory-video-wrapper iframe {
-  display: block;
-  width: 100%;
-  height: 100%;
-}
+
 
 .factory-copy {
   font-size: 14px;
@@ -1653,13 +1653,20 @@ section {
     </p>
 
     <div class="factory-row">
-      <div class="factory-video-wrapper">
-        <!-- replace with your real factory video (MP4 or YouTube embed) -->
-        <video controls muted playsinline poster="factory-thumb.jpg">
-          <source src="assets/videos/factory-orlando.mp4" type="video/mp4" />
-          Your browser does not support the video tag.
-        </video>
+      <div class="factory-video-wrapper" id="factory-video-trigger">
+      <img
+        src="assets/img/factory_video_frame.jpeg"
+        alt="Inside Green Rest factory in Orlando, FL"
+        class="hero-video-thumb"
+      />
+      <div class="hero-video-overlay">
+        <div class="hero-video-play"></div>
+        <div class="hero-video-caption">
+          Inside the Green Rest factory in Orlando — see how each layer is built.
+        </div>
       </div>
+    </div>
+
 
       <div class="factory-copy">
         <div class="factory-badge">Inside Green Rest • Orlando, FL</div>
@@ -2125,40 +2132,65 @@ function sendQuizToCRM(score) {
   // init quiz
   showStep(1);
 
- // ====== HERO VÍDEO (YOUTUBE) + MODAL ======
+// ====== HERO + FACTORY VÍDEO (YOUTUBE) + MODAL ======
 const heroTrigger = document.getElementById('hero-video-trigger');
+const factoryTrigger = document.getElementById('factory-video-trigger');
+
 const modalBackdrop = document.getElementById('video-modal');
 const modalClose = document.getElementById('video-modal-close');
 const modalIframe = document.getElementById('video-modal-iframe');
 
-// TROQUE PELO ID REAL DO VÍDEO NO YOUTUBE
-// Exemplo: https://www.youtube.com/watch?v=AbCdEfG1234  → 'AbCdEfG1234'
-const YT_VIDEO_ID = 'ZxcZRhAFBtc';
-const YT_EMBED_URL =
-  'https://www.youtube.com/embed/' +
-  YT_VIDEO_ID +
-  '?autoplay=1&rel=0&modestbranding=1';
+// IDs dos vídeos no YouTube
+// Hero: https://www.youtube.com/watch?v=ZxcZRhAFBtc
+// Factory (shorts): https://www.youtube.com/shorts/U9zz1tyK77A
+const VIDEO_MAP = {
+  hero: 'ZxcZRhAFBtc',
+  factory: 'U9zz1tyK77A'
+};
 
-function openVideoModal() {
+function buildYoutubeUrl(videoId) {
+  return (
+    'https://www.youtube.com/embed/' +
+    videoId +
+    '?autoplay=1&rel=0&modestbranding=1'
+  );
+}
+
+function openVideoModal(key) {
   if (!modalBackdrop || !modalIframe) return;
+  const videoId = VIDEO_MAP[key];
+  if (!videoId) return;
+
+  modalIframe.src = buildYoutubeUrl(videoId);
   modalBackdrop.classList.add('active');
-  // injeta o SRC só quando abre (já com autoplay)
-  modalIframe.src = YT_EMBED_URL;
 }
 
 function closeVideoModal() {
   if (!modalBackdrop || !modalIframe) return;
   modalBackdrop.classList.remove('active');
-  // limpa o SRC para parar o vídeo
-  modalIframe.src = '';
+  modalIframe.src = ''; // limpa para parar o vídeo
 }
 
+// hero → abre vídeo do depoimento
 if (heroTrigger) {
-  heroTrigger.addEventListener('click', openVideoModal);
+  heroTrigger.addEventListener('click', function () {
+    openVideoModal('hero');
+  });
 }
+
+// factory → abre vídeo da fábrica
+if (factoryTrigger) {
+  factoryTrigger.addEventListener('click', function () {
+    openVideoModal('factory');
+  });
+}
+
+// fechar no X
 if (modalClose) {
   modalClose.addEventListener('click', closeVideoModal);
 }
+
+// fechar clicando fora
 if (modalBackdrop) {
   modalBackdrop.addEventListener('click', function (e) {
     if (e.target === modalBackdrop) {
@@ -2166,11 +2198,18 @@ if (modalBackdrop) {
     }
   });
 }
+
+// fechar com ESC
 document.addEventListener('keydown', function (e) {
-  if (e.key === 'Escape' && modalBackdrop && modalBackdrop.classList.contains('active')) {
+  if (
+    e.key === 'Escape' &&
+    modalBackdrop &&
+    modalBackdrop.classList.contains('active')
+  ) {
     closeVideoModal();
   }
 });
+;
 
 
   // ====== MODAL DE CONTATO (WHATSAPP / SMS) ======
@@ -2292,9 +2331,17 @@ const heroQuizCta  = document.getElementById('hero-quiz-cta');    // botão do h
 
 function sendSimpleEvent(eventType) {
   const payload = {
-    event_type: eventType,
-    utm: utmData || {},
-    created_at: new Date().toISOString()
+    event_type: 'quiz_submit',
+    score: score,
+    email: email || null,
+    phone: phone || null,
+    quiz_answers: quizData || {},
+    utm_source:   utmSource   || null,
+    utm_medium:   utmMedium   || null,
+    utm_campaign: utmCampaign || null,
+    utm_content:  utmContent  || null,
+    utm_term:     utmTerm     || null,
+    created_at: timestamp
   };
 
   sendToCRM(payload);
