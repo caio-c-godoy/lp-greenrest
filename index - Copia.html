@@ -1248,43 +1248,6 @@ section {
   color: var(--text-muted);
   display: block;
 }
-
-.contact-capture-form {
-  display: flex;
-  flex-direction: column;
-  gap: 0.6rem;
-  margin: 0.75rem 0 1rem;
-}
-
-.contact-capture-row label {
-  display: block;
-  font-size: 0.75rem;
-  color: #94a3b8;
-  margin-bottom: 0.1rem;
-}
-
-.contact-capture-row input {
-  width: 100%;
-  padding: 0.55rem 0.9rem;
-  border-radius: 999px;
-  border: 1px solid rgba(148, 163, 184, 0.6);
-  background: rgba(15, 23, 42, 0.9);
-  color: var(--text-main);
-  font-size: 0.85rem;
-  outline: none;
-}
-
-.contact-capture-row input:focus {
-  border-color: var(--accent);
-  box-shadow: 0 0 0 1px rgba(45, 212, 191, 0.4);
-}
-
-.contact-option[disabled] {
-  opacity: 0.5;
-  cursor: not-allowed;
-}
-
-
 /* MOBILE: empilhar logo + botão e evitar invasão de texto */
 @media (max-width: 640px) {
   .hero-header-top {
@@ -1884,28 +1847,9 @@ section {
             <div class="quiz-question">Last step — where should we send your sleep plan?</div>
             <div class="quiz-help">We’ll send your results and, if it makes sense, invite you to a free consultation.</div>
             <div class="quiz-inputs">
-            <input
-              type="text"
-              name="name"
-              placeholder="First name"
-              autocomplete="name"
-              required
-            />
-            <input
-              type="email"
-              name="email"
-              placeholder="Email"
-              autocomplete="email"
-              required
-            />
-            <input
-              type="tel"
-              name="phone"
-              placeholder="Phone (optional)"
-              autocomplete="tel"
-            />
-          </div>
-
+              <input type="email" name="email" placeholder="Email" required />
+              <input type="tel" name="phone" placeholder="Phone (optional)" />
+            </div>
           </div>
 
           <div class="quiz-error" id="quiz-error">Please answer this step before continuing.</div>
@@ -1976,89 +1920,27 @@ section {
 
 <div class="contact-modal-backdrop" id="contact-modal">
   <div class="contact-modal">
-    <button
-      class="contact-modal-close"
-      id="contact-modal-close"
-      aria-label="Close contact options"
-    >
-      ×
-    </button>
-
+    <button class="contact-modal-close" id="contact-modal-close" aria-label="Close contact options">×</button>
     <h3>How do you prefer to talk?</h3>
     <p>Choose how you want to connect with a Green Rest sleep specialist.</p>
 
-    <!-- NOVO: mini-form de captura -->
-    <form id="contact-capture-form" class="contact-capture-form" novalidate>
-      <div class="contact-capture-row">
-        <label for="contact-name">First name</label>
-        <input
-          id="contact-name"
-          name="name"
-          type="text"
-          placeholder="First name"
-          autocomplete="name"
-          required
-        />
-      </div>
-
-      <div class="contact-capture-row">
-        <label for="contact-email">Email</label>
-        <input
-          id="contact-email"
-          name="email"
-          type="email"
-          placeholder="Email"
-          autocomplete="email"
-          required
-        />
-      </div>
-
-      <div class="contact-capture-row">
-        <label for="contact-phone">Phone</label>
-        <input
-          id="contact-phone"
-          name="phone"
-          type="tel"
-          placeholder="Phone (with country code)"
-          autocomplete="tel"
-          required
-        />
-      </div>
-    </form>
-
     <div class="contact-modal-options">
-      <button
-        type="button"
-        class="contact-option"
-        data-channel="whatsapp"
-        disabled
-      >
+      <button type="button" class="contact-option" data-channel="whatsapp">
         <span class="contact-option-title">WhatsApp</span>
-        <span class="contact-option-sub">
-          Fast response, send photos and questions.
-        </span>
+        <span class="contact-option-sub">Fast response, send photos and questions.</span>
       </button>
 
-      <button
-        type="button"
-        class="contact-option"
-        data-channel="sms"
-        disabled
-      >
+      <button type="button" class="contact-option" data-channel="sms">
         <span class="contact-option-title">Text message (SMS)</span>
-        <span class="contact-option-sub">
-          Simple text conversation, no app needed.
-        </span>
+        <span class="contact-option-sub">Simple text conversation, no app needed.</span>
       </button>
     </div>
 
     <small class="contact-modal-note">
-      We’ll send your details and quiz answers (if completed) to our team so you
-      don’t have to repeat everything.
+      We’ll send your details and quiz answers (if completed) to our team so you don’t have to repeat everything.
     </small>
   </div>
 </div>
-
 
 <script>
   // ====== CONFIG GLOBAL ======
@@ -2141,18 +2023,15 @@ section {
 function sendQuizToCRM(score) {
   const timestamp = new Date().toISOString();
 
-  const nameInput  = document.querySelector('#sleep-quiz input[name="name"]');
   const emailInput = document.querySelector('#sleep-quiz input[name="email"]');
   const phoneInput = document.querySelector('#sleep-quiz input[name="phone"]');
-  
-  const name  = nameInput  ? nameInput.value.trim()  : '';
+
   const email = emailInput ? emailInput.value.trim() : '';
   const phone = phoneInput ? phoneInput.value.trim() : '';
 
     const payload = {
     event_type: 'quiz_submit',
     score: score,
-    name:  name  || null,
     email: email || null,
     phone: phone || null,
     quiz_answers: quizData || {},
@@ -2337,54 +2216,6 @@ document.addEventListener('keydown', function (e) {
   const contactModal = document.getElementById('contact-modal');
   const contactModalClose = document.getElementById('contact-modal-close');
   const contactOptions = contactModal ? contactModal.querySelectorAll('.contact-option') : [];
-  // Formulário dentro do modal
-const contactForm = document.getElementById('contact-capture-form');
-
-// Pré-preenche o formulário com dados do quiz, se existirem
-(function prefillContactFormFromQuiz() {
-  if (!contactForm) return;
-  const quizForm = document.getElementById('sleep-quiz');
-  if (!quizForm) return;
-
-  const qName = quizForm.querySelector('input[name="name"]');
-  const qEmail = quizForm.querySelector('input[name="email"]');
-  const qPhone = quizForm.querySelector('input[name="phone"]');
-
-  const cName = contactForm.querySelector('input[name="name"]');
-  const cEmail = contactForm.querySelector('input[name="email"]');
-  const cPhone = contactForm.querySelector('input[name="phone"]');
-
-  if (qName && cName && !cName.value) cName.value = qName.value;
-  if (qEmail && cEmail && !cEmail.value) cEmail.value = qEmail.value;
-  if (qPhone && cPhone && !cPhone.value) cPhone.value = qPhone.value;
-})();
-
-// Habilita/desabilita os botões conforme preenchimento
-function updateContactButtonsState() {
-  if (!contactForm || !contactOptions.length) return;
-
-  const cName = contactForm.querySelector('input[name="name"]');
-  const cEmail = contactForm.querySelector('input[name="email"]');
-  const cPhone = contactForm.querySelector('input[name="phone"]');
-
-  const name = cName?.value.trim();
-  const email = cEmail?.value.trim();
-  const phone = cPhone?.value.trim();
-
-  // Regra: precisa de NOME + (EMAIL OU PHONE)
-  const isValid = !!(name && (email || phone));
-
-  contactOptions.forEach(btn => {
-    btn.disabled = !isValid;
-  });
-}
-
-if (contactForm) {
-  contactForm.addEventListener('input', updateContactButtonsState);
-  // estado inicial
-  updateContactButtonsState();
-}
-
   let currentLeadSource = null; // hero, header, quiz_high etc.
 
   function openContactModal(source) {
@@ -2437,47 +2268,20 @@ function sendToCRM(payload) {
 function buildLeadPayload(channel) {
   const timestamp = new Date().toISOString();
 
-  // 1) Dados do QUIZ
-  const quizForm = document.getElementById('sleep-quiz');
+  const emailInput = document.querySelector('#sleep-quiz input[name="email"]');
+  const phoneInput = document.querySelector('#sleep-quiz input[name="phone"]');
 
-  let name  = '';
-  let email = '';
-  let phone = '';
+  const email = emailInput ? emailInput.value.trim() : '';
+  const phone = phoneInput ? phoneInput.value.trim() : '';
 
-  if (quizForm) {
-    const quizName  = quizForm.querySelector('input[name="name"]');
-    const quizEmail = quizForm.querySelector('input[name="email"]');
-    const quizPhone = quizForm.querySelector('input[name="phone"]');
-
-    if (quizName)  name  = quizName.value.trim();
-    if (quizEmail) email = quizEmail.value.trim();
-    if (quizPhone) phone = quizPhone.value.trim();
-  }
-
-  // 2) Dados do FORM do MODAL (sobrescrevem se estiverem preenchidos)
-  const contactForm = document.getElementById('contact-capture-form');
-  if (contactForm) {
-    const cName  = contactForm.querySelector('input[name="name"]');
-    const cEmail = contactForm.querySelector('input[name="email"]');
-    const cPhone = contactForm.querySelector('input[name="phone"]');
-
-    if (cName && cName.value.trim())  name  = cName.value.trim();
-    if (cEmail && cEmail.value.trim()) email = cEmail.value.trim();
-    if (cPhone && cPhone.value.trim()) phone = cPhone.value.trim();
-  }
-
-  const payload = {
+    const payload = {
     event_type: 'contact',
-    channel: channel || null,
-    source: currentLeadSource || null,
-
-    name:  name  || null,
+    channel: channel,
+    source: currentLeadSource,
     email: email || null,
     phone: phone || null,
-
     quiz_answers: quizData || {},
     created_at: timestamp,
-
     utm_source:   utmSource   || null,
     utm_medium:   utmMedium   || null,
     utm_campaign: utmCampaign || null,
@@ -2485,9 +2289,9 @@ function buildLeadPayload(channel) {
     utm_term:     utmTerm     || null
   };
 
+
   return payload;
 }
-
 
 
 // envia lead pro CRM e depois redireciona para WhatsApp ou SMS
@@ -2512,22 +2316,13 @@ function sendLeadAndRedirect(channel) {
 }
 
 
-  contactOptions.forEach((opt) => {
-  opt.addEventListener('click', function () {
-    if (opt.disabled) return; // segurança
-
-    const channel = opt.dataset.channel;
-    const payload = buildLeadPayload(channel);
-
-    if (!payload.name || (!payload.email && !payload.phone)) {
-      alert('Please fill in your name and at least email or phone before continuing.');
-      return;
-    }
-
-    sendLeadAndRedirect(channel);
+  contactOptions.forEach(opt => {
+    opt.addEventListener('click', function () {
+      const channel = opt.dataset.channel; // whatsapp ou sms
+      closeContactModal();
+      sendLeadAndRedirect(channel);
+    });
   });
-});
-
 
   // ====== EVENTO SIMPLES (por ex. CTA "Start the Sleep Quiz") ======
  
@@ -2567,6 +2362,7 @@ if (heroQuizCta) {
 }
 
 </script>
+
 
 
 
